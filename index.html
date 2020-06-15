@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<title>Clientes Antonelo</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="C:\projeto\webApiProfessor\webQuarta\index.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<label for="cadastroUsuario">Usuario</label>
+		<input type="text" id="cadastroUsuario" name="senhaUsuario">
+		<label for="senhaUsuario">Senha</label>
+		<input type="password" id="senhaUsuario" name="senhaUsuario">
+		<input type="button" value="Cadastrar" onclick="cadastroClientes();" />
+	</div>
+
+
+
+
+</body>
+<script>
+	function carregarTabelaCliente() {
+		var clientes = carregarClientes();
+		$("#cliente").html();
+		$.each(clientes, function (index, item){
+			var linha = "<tr>";
+			linha += "<td>" + item.nome + "</td>";
+			linha += "<td>" + item.idade + "</td>";
+			linha += "<td>" + item.rg + "</td>";
+			linha += "<td>" + item.endereco + "</td>";
+			linha += "</tr>";
+			$("#cliente").append(linha);
+		});
+	}		
+</script>
+
+</html>
